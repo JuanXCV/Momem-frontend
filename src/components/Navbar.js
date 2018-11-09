@@ -9,6 +9,7 @@ class Navbar extends Component {
         {isLogged ? <div>
           <p>username: {this.props.user.username}</p>
           <p onClick={this.props.logout}>Logout</p>
+          <Link to='/momem/create'>New Momem</Link>
         </div> : <div>
           <Link to='/login'>Login</Link>
           <Link to='/signup'>Signup</Link>

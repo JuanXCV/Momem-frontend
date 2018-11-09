@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import { withAuth } from '../lib/authContext';
 class Private extends Component {
   render() {
+
+    const {username, name, email, description} = this.props.user
+
     return (
       <div>
-        <h2>Hola estoy en el cosumer</h2>
-        <h1>Welcome {this.props.user.username}</h1>
+        <h1>Welcome {username}</h1>
+        <h2>Name: {name} </h2>
+        <h3>Email: {email} </h3>
+        <p> Description: {description} </p>
       </div>
     )
   }
