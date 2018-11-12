@@ -18,7 +18,8 @@ export default class AuthContext extends Component {
   state = {
     isLogged: false,
     user: null,
-    isLoading: true
+    isLoading: true,
+    history: this.props.history
   }
 
   componentDidMount() {
@@ -65,7 +66,8 @@ export default class AuthContext extends Component {
       isLogged: this.state.isLogged,
       user: this.state.user,
       logout: this.handleLogOut,
-      setUser: this.handleSetUser
+      setUser: this.handleSetUser,
+      history: this.state.history
     }}>
       {this.props.children}
     </Provider>

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+
 
 import momem from '../lib/momem-service';
 import { withAuth } from '../lib/authContext';
+import MomemCard from '../components/MomemCard'
 
 class Momems extends Component {
 
@@ -19,14 +20,9 @@ class Momems extends Component {
     }
 
     return (
-      <div>
+      <div className='section-momems' >
         {momems.map(momem => {
-          return <div key={momem._id} >
-           <Link to={`momem/${momem._id}`} > <h1> {momem.title} </h1> </Link>
-            <p> {momem.content} </p>
-            <p> {momem.image} </p>
-            <p> {momem.owner.name} </p>
-          </div>
+          return <MomemCard key={momem._id} momem={momem} />
         })}
       </div>
     )

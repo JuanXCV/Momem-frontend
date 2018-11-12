@@ -46,7 +46,6 @@ class MomemDetail extends Component {
 
     momem.delete(currentMomem._id)
     .then(result => {
-      console.log('borrado')
 
       this.setState({
         currentMomem: null,

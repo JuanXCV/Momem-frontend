@@ -1,0 +1,25 @@
+import React, { Component } from 'react'
+import { Link, withRouter } from 'react-router-dom';
+import { withAuth } from '../lib/authContext';
+
+class Header extends Component {
+
+  render() {  
+    const { isLogged, location} = this.props;
+    return (
+      <div>
+        {isLogged && location.pathname !== '/private' ? (
+        <nav className="navbar navbar-top" role="navigation" aria-label="main navigation">
+          <div className="navbar-brand navbar-header">
+            <div className='navbar-item' > <Link to='/private' > <img src="https://cdn4.iconfinder.com/data/icons/e-commerce-icon-set/48/Username-512.png" alt="profile"/> </Link> </div>
+            <div className='navbar-item' > <Link to='/momem/create' > <img src="https://image.flaticon.com/icons/svg/61/61183.svg" alt="add momem"/> </Link> </div>
+          </div>
+        </nav>
+
+        ) : ( "" )}
+      </div>
+    )
+  }
+}
+
+export default withAuth(withRouter(Header));

@@ -53,24 +53,35 @@ class Signup extends Component {
   render() {
     const { username, password, email, errorMessage} = this.state;
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
+      <form onSubmit={this.handleFormSubmit} className='section'>
+        <h1 className='title' >SIGN UP</h1>
+        <div className='field'>
           <label>Username:</label>
-          <input type="text" name="username" value={username} onChange={this.handleChange}/>
-          <label>Email :</label>
-          <input type="email" name="email" value={email} onChange={this.handleChange} />
-          <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
-          <input type="submit" value="Signup" />
-        </form>
-        <div>
-          {errorMessage}
+          <div className='control' >
+            <input className='input' type="text" name="username" value={username} onChange={this.handleChange}/>
+          </div>
         </div>
-
-        <p>Already have account? 
-          <Link to={"/login"}> Login</Link>
-        </p>
-      </div>
+        <div className='field'>
+          <label>Email:</label>
+          <div className='control' >
+            <input className='input' type="email" name="email" value={email} onChange={this.handleChange}/>
+          </div>
+        </div>
+        <div className='field' >
+          <label>Password:</label>
+          <div className='control' >
+            <input className='input' type="password" name="password" value={password} onChange={this.handleChange} />
+          </div>
+        </div>
+        <div className='control' >
+          <input className='button is-link' type="submit" value="SIGN UP" />
+        </div>
+        {errorMessage ? `${errorMessage}` : ""}
+        <div className='section'>
+          <p>ALREADY HAVE AN ACCOUNT?</p>
+          <Link to='/login' > <button className='button is-link' >LOG IN</button> </Link>
+        </div>
+      </form>
     )
   }
 }

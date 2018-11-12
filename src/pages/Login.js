@@ -27,12 +27,23 @@ class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <form onSubmit={this.handleFormSubmit}>
-        <label>Username:</label>
-        <input type="text" name="username" value={username} onChange={this.handleChange}/>
-        <label>Password:</label>
-        <input type="password" name="password" value={password} onChange={this.handleChange} />
-        <input type="submit" value="Login" />
+      <form onSubmit={this.handleFormSubmit} className='section'>
+        <h1 className='title' >LOG IN</h1>
+        <div className='field'>
+          <label>Username:</label>
+          <div className='control' >
+            <input className='input' type="text" name="username" value={username} onChange={this.handleChange}/>
+          </div>
+        </div>
+        <div className='field' >
+          <label>Password:</label>
+          <div className='control' >
+            <input className='input' type="password" name="password" value={password} onChange={this.handleChange} />
+          </div>
+        </div>
+        <div className='control' >
+          <input className='button is-link' type="submit" value="LOG IN" />
+        </div>
       </form>
     )
   }
