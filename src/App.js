@@ -5,11 +5,13 @@ import PrivateRoute from './components/PrivateRoute'
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Private from './pages/Private';
+import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import MomemCreate from './pages/MomemCreate'
 import Momems from './pages/Momems'
 import MomemDetail from './pages/MomemDetail'
+import Filters from './pages/Filters'
 
 import AuthContext from './lib/authContext';
 
@@ -28,6 +30,8 @@ class App extends Component {
               <PrivateRoute exact path="/momem" component={Momems} />
               <PrivateRoute path="/momem/:id" component={MomemDetail} />                
               <PrivateRoute path="/private" component={Private} />
+              <PrivateRoute path="/profile/:id" component={Profile} />
+              <PrivateRoute path="/filters" component={Filters} />
             </Switch>
           </div>
         </div>

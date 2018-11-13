@@ -8,7 +8,7 @@ class Header extends Component {
     const { isLogged, location} = this.props;
     return (
       <div>
-        {isLogged && location.pathname !== '/private' ? (
+        {isLogged && location.pathname !== '/private' && !location.pathname.includes('profile') ? (
         <nav className="navbar navbar-top" role="navigation" aria-label="main navigation">
           <div className="navbar-brand navbar-header">
             <div className='navbar-item' > <Link to='/private' > <img src="https://cdn4.iconfinder.com/data/icons/e-commerce-icon-set/48/Username-512.png" alt="profile"/> </Link> </div>

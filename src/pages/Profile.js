@@ -7,13 +7,19 @@ import MomemCard from '../components/MomemCard'
 class Private extends Component {
 
   state = {
-    momems: []
+    momems: [],
+    user: null,
+    isLoading: true,
   }
 
   render() {
 
-    const {username, name, description, image, backgroundImage} = this.props.user
-    const {momems} = this.state;
+    const {momems, isLoading} = this.state;
+    
+    if(isLoading){
+      return <h1>is loading...</h1>
+    }
+    const {username, name, description, image, backgroundImage} = this.state.user
 
     return (
       <div>
@@ -21,9 +27,6 @@ class Private extends Component {
         <div className='section private' >
           <div className= 'profile'>
             <img src={image} alt="profile" className='profile-img'/>
-            <div className='logout' >
-              <div onClick={this.handleLogOut} className='logout-button' > <img src="https://cdn.icon-icons.com/icons2/37/PNG/512/logout_3622.png" alt=""/> </div>
-            </div>
             <h1 className='title' >{name}</h1>
             <h2 className='subtitle' >@{username} </h2>
             <p> Description: {description} </p>
@@ -33,26 +36,33 @@ class Private extends Component {
           {momems.map(momem => {
             return <MomemCard momem={momem} key={momem._id} />
           })}
-          {momems.length<1 ? <Link to='/momem/create' > <h1 className='subtitle button is-info' > + </h1>  </Link> : ("")}
+          {momems.length<1 ? <Link to='/momem/create' > <h1 className='subtitle ' > This user has not momems yet </h1>  </Link> : ("")}
         </div>
       </div>
     )
   }
 
-  handleLogOut = () => {
-    this.props.logout()
-  }
-
   componentDidMount() {
-    userService.getMomems(this.props.user._id)
-    .then(momems => {
-      this.setState({
-        momems,
+    const {id} = this.props.match.params
+
+    userService.getUser(id)
+    .then(user => {
+      userService.getMomems(id)
+      .then(momems => {
+        this.setState({
+          momems,
+          user,
+          isLoading: false,
+        })
+      })
+      .catch(error => {
+        console.log(error)
       })
     })
     .catch(error => {
       console.log(error)
     })
+
   }
 }
 

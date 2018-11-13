@@ -49,11 +49,6 @@ class Momem {
     });
   };
 
-
-  
-
-
-
 }
 
 const momem = new Momem();

@@ -22,6 +22,7 @@
   left: 0;
   right: 0;
   background-color: white;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   
 }
 
@@ -34,6 +35,7 @@
 
 .momem-create {
   padding-top: 100px;
+  padding-bottom: 100px; 
 }
 
 .momem-card {
@@ -70,7 +72,7 @@
   position: relative;
   border-radius: 50px;
   width: 70px;
-  background-color: yellow;
+  background-color: #FACC33;
   border: 5px solid white;
   top: -30px;
 
@@ -88,3 +90,45 @@
   top: -105px;
 }
 
+.wrap {
+  flex-wrap: wrap;
+}
+
+.padding {
+  margin: 5px;
+}
+
+.private {
+   margin-bottom: 100px;
+ }
+
+ .filters {
+   padding-top: 90px;
+   height: 100%;
+   margin-bottom: 50px;
+ }
+
+
+ .theme-card {
+  /* border: 1px solid #FACC33; */
+  margin-bottom: 10px;
+  /* border-radius: 15px;
+  box-shadow: inset 0 0 0.8em #FACC33; */
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(228, 228, 228, 0.15);
+ }
+
+ .is-momem {
+  background-color: #FACC33;
+  color: white;
+  font-size: 1em;
+ }
+
+ .fonts {
+   height: auto;
+   margin-bottom: 10px;
+ }
+ .font-image {
+   width: 30px;
+ }

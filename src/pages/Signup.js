@@ -18,7 +18,6 @@ class Signup extends Component {
 
     auth.signup({ username, email, password })
       .then( (user) => {
-        console.log(user)
         this.setState({
             username: "",
             email: "",
@@ -32,11 +31,11 @@ class Signup extends Component {
         //   this.setState({errorMessage: "Put some info in the fields bro!!!"})
         // }
 
-        switch(response.data.error) {
-          case 'empty-fields': this.setState({errorMessage: 'Put some info in the fields bro!!!'});
-            break;
-          default :
-        }
+        // switch(response.data.error) {
+        //   case 'empty-fields': this.setState({errorMessage: 'Put some info in the fields bro!!!'});
+        //     break;
+        //   default :
+        // }
 
   
         //error: 'empty-fields'
