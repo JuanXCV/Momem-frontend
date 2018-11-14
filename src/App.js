@@ -12,8 +12,9 @@ import MomemCreate from './pages/MomemCreate'
 import MomemDetail from './pages/MomemDetail'
 import Filters from './pages/Filters'
 import Home from './pages/Home'
-
+import Search from './pages/Search'
 import AuthContext from './lib/authContext';
+import Welcome from './pages/Welcome'
 
 class App extends Component {
   render() {
@@ -24,10 +25,12 @@ class App extends Component {
             <Header />
             <Navbar />
             <Switch>
+              <Route exact path="/" component={Welcome} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <PrivateRoute path="/momem/create" component={MomemCreate} />
               <PrivateRoute exact path="/momems" component={Home} />
+              <PrivateRoute exact path="/search" component={Search} />
               <PrivateRoute path="/momem/:id" component={MomemDetail} />                
               <PrivateRoute path="/private" component={Private} />
               <PrivateRoute path="/profile/:id" component={Profile} />

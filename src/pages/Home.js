@@ -1,15 +1,25 @@
 import React, { Component } from 'react'
 import { withAuth } from '../lib/authContext';
 import Momems from './Momems';
+import Promise from 'bluebird'
 
 class Home extends Component {
 
-  state = {
-    filters: [],
-    currentFilter: "",
-    isLoading: true,
-    errorMessage: null,
+  constructor(props) {
+    super(props);
+
+    this.setStateAsync = Promise.promisify(this.setState);
+
+    this.state = {
+      filters: [],
+      currentFilter: "",
+      isLoading: true,
+      errorMessage: null,
+    }
+
   }
+
+  
 
   componentDidMount() {
     const {user} = this.props
@@ -31,9 +41,25 @@ class Home extends Component {
   }
 
   handleFilter = (filter) => {
-    this.setState({
+    this.setStateAsync({
       currentFilter: filter,
     })
+    .then(succes => {
+
+      this.state.callback();
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }
+
+  handleCallback = (Callback) => {
+    this.setState({
+      callback: Callback,
+    })
+  }
+
+  componentDidUpdate() {
   }
 
   render() {
@@ -51,7 +77,7 @@ class Home extends Component {
               return <p onClick={() => {this.handleFilter(item)}} key={item._id} className='button is-momem padding title' >{item.theme.name}</p>
             })}
           </div>
-          <Momems filter={currentFilter} />
+          <Momems filter={currentFilter} onCallback={this.handleCallback} />
         </div>
       )}
       </div>

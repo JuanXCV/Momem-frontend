@@ -13,10 +13,10 @@ class MomemDetail extends Component {
   render() {
 
     const {isLoading, currentMomem} = this.state;
-    
     if(isLoading) {
       return <h1>is loading...</h1>
     }
+    console.log(currentMomem.created_at)
 
     return (
       <div className='momem-detail'>

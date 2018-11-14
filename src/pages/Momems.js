@@ -35,6 +35,7 @@ class Momems extends Component {
 
   componentDidMount() {
     this.getMomems();
+    this.props.onCallback(this.getMomems);
   }
 
   getMomems = () => {

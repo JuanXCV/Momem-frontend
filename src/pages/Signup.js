@@ -52,33 +52,30 @@ class Signup extends Component {
   render() {
     const { username, password, email, errorMessage} = this.state;
     return (
-      <form onSubmit={this.handleFormSubmit} className='section'>
-        <h1 className='title' >SIGN UP</h1>
+      <form onSubmit={this.handleFormSubmit} className='section auth'>
+        <h1 className='title titulo' >Registrate</h1>
         <div className='field'>
-          <label>Username:</label>
-          <div className='control' >
-            <input className='input' type="text" name="username" value={username} onChange={this.handleChange}/>
+          <div className='control margin-bottom' >
+            <input  placeholder='Your username' className='input' type="text" name="username" value={username} onChange={this.handleChange}/>
           </div>
         </div>
         <div className='field'>
-          <label>Email:</label>
-          <div className='control' >
-            <input className='input' type="email" name="email" value={email} onChange={this.handleChange}/>
+          <div className='control margin-bottom' >
+            <input placeholder='Your e-mail' className='input' type="email" name="email" value={email} onChange={this.handleChange}/>
           </div>
         </div>
         <div className='field' >
-          <label>Password:</label>
-          <div className='control' >
-            <input className='input' type="password" name="password" value={password} onChange={this.handleChange} />
+          <div className='control margin-bottom' >
+            <input placeholder='Your password' className='input' type="password" name="password" value={password} onChange={this.handleChange} />
           </div>
         </div>
-        <div className='control' >
-          <input className='button is-link' type="submit" value="SIGN UP" />
+        <div className='control margin-bottom' >
+          <input className='button is-momem title' type="submit" value="SIGN UP" />
         </div>
         {errorMessage ? `${errorMessage}` : ""}
         <div className='section'>
-          <p>ALREADY HAVE AN ACCOUNT?</p>
-          <Link to='/login' > <button className='button is-link' >LOG IN</button> </Link>
+          <p> Already have an account?<Link to='/login' > <button className='button is-text' >LOGIN</button> </Link></p>
+          
         </div>
       </form>
     )
