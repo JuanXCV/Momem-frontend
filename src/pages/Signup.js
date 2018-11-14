@@ -27,20 +27,9 @@ class Signup extends Component {
         this.props.history.push('/private');
       })
       .catch(({response}) => {
-        // if (response.data.error === "empty-fields") {
-        //   this.setState({errorMessage: "Put some info in the fields bro!!!"})
-        // }
-
-        // switch(response.data.error) {
-        //   case 'empty-fields': this.setState({errorMessage: 'Put some info in the fields bro!!!'});
-        //     break;
-        //   default :
-        // }
-
-  
-        //error: 'empty-fields'
-        //error: 'username-not-unique'
-        //error: 'email-not-unique'
+        if (response.data.error ) {
+          this.setState({errorMessage: response.data.error})
+        }
       })
   }
 
@@ -69,10 +58,10 @@ class Signup extends Component {
             <input placeholder='Your password' className='input' type="password" name="password" value={password} onChange={this.handleChange} />
           </div>
         </div>
+        {errorMessage ? `${errorMessage}` : ""}
         <div className='control margin-bottom' >
           <input className='button is-momem title' type="submit" value="SIGN UP" />
         </div>
-        {errorMessage ? `${errorMessage}` : ""}
         <div className='section'>
           <p> Already have an account?<Link to='/login' > <button className='button is-text' >LOGIN</button> </Link></p>
           

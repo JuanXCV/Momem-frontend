@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom'
+import { Switch } from 'react-router-dom'
 
 import PrivateRoute from './components/PrivateRoute'
 import Navbar from './components/Navbar';
@@ -15,6 +15,7 @@ import Home from './pages/Home'
 import Search from './pages/Search'
 import AuthContext from './lib/authContext';
 import Welcome from './pages/Welcome'
+import AnonRoute from './components/AnonRoute'
 
 class App extends Component {
   render() {
@@ -25,12 +26,12 @@ class App extends Component {
             <Header />
             <Navbar />
             <Switch>
-              <Route exact path="/" component={Welcome} />
-              <Route path="/signup" component={Signup} />
-              <Route path="/login" component={Login} />
+              <AnonRoute exact path="/" component={Welcome} />
+              <AnonRoute path="/signup" component={Signup} />
+              <AnonRoute path="/login" component={Login} />
               <PrivateRoute path="/momem/create" component={MomemCreate} />
-              <PrivateRoute exact path="/momems" component={Home} />
-              <PrivateRoute exact path="/search" component={Search} />
+              <PrivateRoute path="/momems" component={Home} />
+              <PrivateRoute path="/search" component={Search} />
               <PrivateRoute path="/momem/:id" component={MomemDetail} />                
               <PrivateRoute path="/private" component={Private} />
               <PrivateRoute path="/profile/:id" component={Profile} />

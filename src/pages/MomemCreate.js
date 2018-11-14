@@ -96,7 +96,7 @@ class MomemCreate extends Component {
         themes,
         theme: "",
         themesFiltered: null,
-        errorMessage: 'Theme yet added'
+        errorMessage: 'Theme already added'
       })
     }
 

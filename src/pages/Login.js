@@ -7,6 +7,7 @@ class Login extends Component {
   state = {
     username: "",
     password: "",
+    errorMessage: "",
   }
 
   handleFormSubmit = (event) => {
@@ -18,7 +19,11 @@ class Login extends Component {
       this.props.setUser(user)
       this.props.history.push('/private'); 
     })
-    .catch( error => console.log(error) )
+    .catch(({response}) => {
+      if (response.data.error ) {
+        this.setState({errorMessage: response.data.error})
+      }
+    })
   }
 
   handleChange = (event) => {  
@@ -27,7 +32,7 @@ class Login extends Component {
   }
 
   render() {
-    const { username, password } = this.state;
+    const { username, password, errorMessage } = this.state;
     return (
       <form onSubmit={this.handleFormSubmit} className='section auth'>
         <h1 className='title titulo' >Accede</h1>
@@ -41,6 +46,7 @@ class Login extends Component {
             <input placeholder='Your password' className='input' type="password" name="password" value={password} onChange={this.handleChange} />
           </div>
         </div>
+        {errorMessage ? `${errorMessage}` : ""}
         <div className='control margin-bottom' >
           <input className='button is-momem title' type="submit" value="LOGIN" />
         </div>

@@ -10,7 +10,7 @@ class MomemCard extends Component {
         <div className="card-content momem-content" >
           <div className="media">
             <div className="media-content">
-              <Link to={`momem/${momem._id}`} > <p className="title is-4 white">{momem.title}</p> </Link>
+              <Link to={`/momem/${momem._id}`} > <p className="title is-4 white">{momem.title}</p> </Link>
               <p className="subtitle is-6 white">{momem.owner.name}</p>
             </div>
           </div>

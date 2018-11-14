@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom';
 import momem from '../lib/momem-service';
 import { withAuth } from '../lib/authContext';
 
@@ -13,6 +13,7 @@ class MomemDetail extends Component {
   render() {
 
     const {isLoading, currentMomem} = this.state;
+    const {user} = this.props
     if(isLoading) {
       return <h1>is loading...</h1>
     }
@@ -31,12 +32,17 @@ class MomemDetail extends Component {
             <div className="media">
               <div className="media-left">
                 <figure className="image is-48x48">
-                  <img src={currentMomem.owner.image} alt=""/>
+                  <Link to={`/profile/${currentMomem.owner._id}`} ><img src={currentMomem.owner.image} alt=""/></Link>
                 </figure>
               </div>
               <div className="media-content">
                 <p className="title is-4">{currentMomem.title}</p>
                 <p className="subtitle is-6">{currentMomem.owner.username}</p>
+                <div className='is-grouped field wrap'>
+                  {currentMomem.themes.map(item => {
+                  return <p key={item._id} className='padding is-momem themes' >{item.name}</p>
+                    })}
+                </div>
               </div>
             </div>
 
@@ -47,7 +53,9 @@ class MomemDetail extends Component {
             </div>
           </div>
         </div>
-        <button onClick={this.handleClick} className='button'>delete</button>
+        <div className='section delete-button'> 
+          {user._id === currentMomem.owner._id ?  <button onClick={this.handleClick} className='button is-danger padding'>DELETE MOMEM</button>: ""}
+        </div>
       </div>
     )
   }

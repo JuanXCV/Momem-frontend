@@ -56,7 +56,7 @@ class Filters extends Component {
       this.setState({
         inputTheme: "",
         themesFiltered: [],
-        errorMessage: 'Filtered yet added'
+        errorMessage: 'Filtered already added'
       })
     }
   }
@@ -77,8 +77,8 @@ class Filters extends Component {
     return (
       <div className='section filters' >
         <div className='search-bar field' >
-          <div className='control control-search'>
-            <input value={inputTheme} type="text" className='input input-search' placeholder='Add a filter' onChange={this.handleChange}/>
+          <div className='control control-search '>
+            <input value={inputTheme} type="text" className='input input-search momem-search' placeholder='Add a filter' onChange={this.handleChange}/>
           </div>
           {errorMessage ? <p>{errorMessage}</p> : "" }
           {themesFiltered.map(item => {

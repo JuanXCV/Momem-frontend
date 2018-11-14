@@ -74,7 +74,7 @@ class ThemeCard extends Component {
       this.setState({
         inputFont: "",
         fontsFiltered: [],
-        errorMessage: "Font yet added",
+        errorMessage: "Font already added",
         fonts,
       })
     }

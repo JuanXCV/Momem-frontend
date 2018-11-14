@@ -36,8 +36,8 @@ export default class Search extends Component {
       <div className='search-momems'> 
         <div className='section' >
           <div className='search-bar field' >
-            <div className='control control-search'>
-              <input value={inputMomem} type="text" className='input input-search' placeholder='Search your MOMEM' onChange={this.handleChange}/>
+            <div className='control control-search '>
+              <input value={inputMomem} type="text" className='input input-search momem-search' placeholder='Search your MOMEM' onChange={this.handleChange}/>
             </div>
           </div>
         </div>
