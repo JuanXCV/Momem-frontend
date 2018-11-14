@@ -38,7 +38,7 @@ class MomemCreate extends Component {
           content: "",
           image: "",
         });
-        this.props.history.push('/momem');
+        this.props.history.push('/momems');
       })
       .catch( error => console.log(error) )
   }
@@ -168,7 +168,7 @@ class MomemCreate extends Component {
               <input className="input" type="text" placeholder="Elija un tema" name="theme" value={theme} onChange={this.handleChangeTheme}/>
             </div>
             <div className='control'>
-              <button onClick={(e) => {e.preventDefault(); this.themeSubmit(theme)}}  className='button is-momem'> + </button>
+              <button onClick={(e) => {e.preventDefault(); this.themeSubmit(theme)}}  className='button is-momem title'> + </button>
             </div>
           </div>
           {errorMessage ? <p>{errorMessage}</p> : "" }
@@ -185,7 +185,7 @@ class MomemCreate extends Component {
         </div>
         <div className='field' >
           <div className='control' >
-            <input className='button is-momem' type="submit" value="MO!" />
+            <input className='button is-momem title' type="submit" value="MO!" />
           </div>
         </div>
       </form>

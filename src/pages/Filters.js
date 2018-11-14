@@ -61,6 +61,16 @@ class Filters extends Component {
     }
   }
 
+  handleDeleteTheme = (themeId) => {
+    userService.deleteFilter(themeId)
+    .then(user => {
+      this.props.setUser(user)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }
+
   render() {
     const {inputTheme, themesFiltered, errorMessage} = this.state
     const {filters} = this.props.user;
@@ -76,7 +86,7 @@ class Filters extends Component {
           })}
         </div>
         {filters.map((item, idx) => {
-          return <ThemeCard key={item.theme._id} filter={item}/>
+          return <ThemeCard key={item.theme._id} filter={item} onDelete={this.handleDeleteTheme}/>
 
         })}
       </div>

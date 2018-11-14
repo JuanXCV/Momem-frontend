@@ -20,8 +20,19 @@ class User {
       
   };
 
+  deleteFilter(themeId) {
+    return this.user.delete(`/user/filter/${themeId}`)
+    .then(({ data }) => data)
+  }
+
   addFont(themeId, fontId) {
     return this.user.put(`/user/filter/${themeId}/font/${fontId}`)
+    .then(({ data }) => data)
+      
+  };
+
+  deleteFont(themeId, fontId) {
+    return this.user.delete(`/user/filter/${themeId}/font/${fontId}`)
     .then(({ data }) => data)
       
   };

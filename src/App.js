@@ -9,9 +9,9 @@ import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import MomemCreate from './pages/MomemCreate'
-import Momems from './pages/Momems'
 import MomemDetail from './pages/MomemDetail'
 import Filters from './pages/Filters'
+import Home from './pages/Home'
 
 import AuthContext from './lib/authContext';
 
@@ -27,7 +27,7 @@ class App extends Component {
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <PrivateRoute path="/momem/create" component={MomemCreate} />
-              <PrivateRoute exact path="/momem" component={Momems} />
+              <PrivateRoute exact path="/momems" component={Home} />
               <PrivateRoute path="/momem/:id" component={MomemDetail} />                
               <PrivateRoute path="/private" component={Private} />
               <PrivateRoute path="/profile/:id" component={Profile} />

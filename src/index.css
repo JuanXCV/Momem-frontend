@@ -57,7 +57,7 @@
 }
 
 .section-momems {
-  padding-top: 80px; 
+  padding-top: 10px; 
   margin-bottom: 90px;
 }
 
@@ -131,4 +131,21 @@
  }
  .font-image {
    width: 30px;
+ }
+
+ .home {
+   padding-top: 80px;
+   margin-bottom: 80px;
+ }
+
+ .filters-bar {
+   overflow-x: scroll;
+    overflow-y: hidden;
+    height: 50px;
+    white-space:nowrap
+ }
+
+ .momem-detail {
+   padding-top: 70px;
+   margin-bottom: 100px;
  }

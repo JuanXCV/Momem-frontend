@@ -19,12 +19,35 @@ class MomemDetail extends Component {
     }
 
     return (
-      <div> 
-        <h1> {currentMomem.title} </h1>
-        <p> {currentMomem.content} </p>
-        <p> {currentMomem.image} </p>
-        <p> author: {currentMomem.owner.name} </p>
-        <button onClick={this.handleClick} >delete</button>
+      <div className='momem-detail'>
+
+        <div className="card">
+          <div className="card-image">
+            <figure className="image is-4by2">
+              <img src={currentMomem.image} alt=""/>
+            </figure>
+          </div>
+          <div className="card-content">
+            <div className="media">
+              <div className="media-left">
+                <figure className="image is-48x48">
+                  <img src={currentMomem.owner.image} alt=""/>
+                </figure>
+              </div>
+              <div className="media-content">
+                <p className="title is-4">{currentMomem.title}</p>
+                <p className="subtitle is-6">{currentMomem.owner.username}</p>
+              </div>
+            </div>
+
+            <div className="content">
+              {currentMomem.content}
+              <br/>
+              <time dateTime="2016-1-1">{currentMomem.timestamps}</time>
+            </div>
+          </div>
+        </div>
+        <button onClick={this.handleClick} className='button'>delete</button>
       </div>
     )
   }
@@ -51,7 +74,7 @@ class MomemDetail extends Component {
         currentMomem: null,
         isLoading: true,
       })
-      this.props.history.push('/momem');
+      this.props.history.push('/momems');
     })
     .catch(error => {
       console.log(error)

@@ -17,6 +17,12 @@ class Momem {
       });
   };
 
+  getMomemsByFont(userId, themeId) {
+    return this.momem.get(`/momem/theme/${themeId}/font/${userId}`)
+    .then(({ data }) => data)
+      
+  }
+
   create(momem) {
     return this.momem.post('/momem', momem)
     .then(({ data }) => data)

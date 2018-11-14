@@ -124,7 +124,7 @@ class ThemeCard extends Component {
             </p>
           </div>
           <div className='card-content'>
-            <p className='subtitle button is-danger ' >-</p>
+            <p  onClick={() => {this.props.onDelete(theme._id)}} className='subtitle button is-danger ' >-</p>
           </div>
         </div>
         {isVisible ? (
