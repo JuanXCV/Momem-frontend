@@ -26,7 +26,7 @@ class Private extends Component {
             </div>
             <h1 className='title' >{name}</h1>
             <h2 className='subtitle' >@{username} </h2>
-            <p> Description: {description} </p>
+            <p>{description} </p>
           </div>
           <h3 className='subtitle' >Momems</h3>
           <hr/>

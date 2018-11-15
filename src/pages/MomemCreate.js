@@ -38,7 +38,7 @@ class MomemCreate extends Component {
           content: "",
           image: "",
         });
-        this.props.history.push('/momems');
+        this.props.history.push('/private');
       })
       .catch(error => {
         console.error(error)
