@@ -81,7 +81,7 @@ class MomemDetail extends Component {
         currentMomem: null,
         isLoading: true,
       })
-      this.props.history.push('/momems');
+      this.props.history.push('/private');
     })
     .catch(error => {
       console.error(error)
