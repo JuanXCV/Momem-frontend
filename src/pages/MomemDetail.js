@@ -17,7 +17,6 @@ class MomemDetail extends Component {
     if(isLoading) {
       return <h1>is loading...</h1>
     }
-    console.log(currentMomem.created_at)
 
     return (
       <div className='momem-detail'>
@@ -85,7 +84,7 @@ class MomemDetail extends Component {
       this.props.history.push('/momems');
     })
     .catch(error => {
-      console.log(error)
+      console.error(error)
     })
   }
 }

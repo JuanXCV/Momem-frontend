@@ -16,6 +16,7 @@ import Search from './pages/Search'
 import AuthContext from './lib/authContext';
 import Welcome from './pages/Welcome'
 import AnonRoute from './components/AnonRoute'
+import Notifications from './pages/Notifications'
 
 class App extends Component {
   render() {
@@ -32,6 +33,7 @@ class App extends Component {
               <PrivateRoute path="/momem/create" component={MomemCreate} />
               <PrivateRoute path="/momems" component={Home} />
               <PrivateRoute path="/search" component={Search} />
+              <PrivateRoute path="/notifications" component={Notifications} />
               <PrivateRoute path="/momem/:id" component={MomemDetail} />                
               <PrivateRoute path="/private" component={Private} />
               <PrivateRoute path="/profile/:id" component={Profile} />

@@ -67,14 +67,14 @@ class ThemeCard extends Component {
         this.updateFonts()
       })
       .catch(error => {
-        console.log(error)
+        console.error(error)
       })
 
     } else {
       this.setState({
         inputFont: "",
         fontsFiltered: [],
-        errorMessage: "Font already added",
+        errorMessage: "Source already added",
         fonts,
       })
     }
@@ -97,7 +97,7 @@ class ThemeCard extends Component {
 
         })
         .catch(error => {
-          console.log(error)
+          console.error(error)
         })
       )
     })
@@ -129,7 +129,7 @@ class ThemeCard extends Component {
         </div>
         {isVisible ? (
           <div className='fonts section card'>
-            <label className="label">Fonts:</label>
+            <label className="label">Sources:</label>
             <div className='field is-grouped wrap'>
               {fonts.length>0 ? (
                 fonts.map((item, idx) => {
@@ -141,7 +141,7 @@ class ThemeCard extends Component {
             </div>
             <div className='field has-addons'> 
               <div className='control control-search'>
-                <input value={inputFont} type="text" className='input input-search' placeholder='Add a font' onChange={this.handleChange}/>
+                <input value={inputFont} type="text" className='input input-search' placeholder='Add a source' onChange={this.handleChange}/>
               </div>
               <div className='control'>
                 <button onClick={this.fontSubmit}  className='button is-momem'> + </button>

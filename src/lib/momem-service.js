@@ -12,9 +12,7 @@ class Momem {
   list() {
     return this.momem.get('/momem/list')
       .then(({ data }) => data)
-      .catch(error => {
-        console.log(error);
-      });
+      
   };
 
   getMomemsByFont(userId, themeId) {
@@ -26,33 +24,25 @@ class Momem {
   create(momem) {
     return this.momem.post('/momem', momem)
     .then(({ data }) => data)
-    .catch(error => {
-      console.log(error);
-    });
+    
   };
 
   detail(id) {
     return this.momem.get(`/momem/${id}`)
     .then(({ data }) => data)
-    .catch(error => {
-      console.log(error);
-    });
+    
   };
 
   edit(momem, id) {
     return this.momem.put(`/momem/${id}`, momem)
     .then(({ data }) => data)
-    .catch(error => {
-      console.log(error);
-    });
+    
   };
 
   delete(id) {
     return this.momem.delete(`/momem/${id}`)
     .then(({ data }) => data)
-    .catch(error => {
-      console.log(error);
-    });
+    
   };
 
 }

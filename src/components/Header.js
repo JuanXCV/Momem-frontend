@@ -14,6 +14,7 @@ class Header extends Component {
             <div className='navbar-item' > <Link to='/private' > <img src="/images/private.png" alt="profile"/> </Link> </div>
             {location.pathname === '/momems' ? <p className='subtitle'>HOME</p> : ""}
             {location.pathname === '/search' ? <p className='subtitle'>SEARCH</p> : ""}
+            {location.pathname === '/notifications' ? <p className='subtitle'>NOTIFICATIONS</p> : ""}
             {location.pathname === '/filters' ? <p className='subtitle'>FILTERS</p> : ""}
             {location.pathname === '/momem/create' ? <p className='subtitle'>CREATE A MOMEM</p> : ""}
             <div className='navbar-item' > <Link to='/momem/create' > <img src="/images/add.svg" alt="add momem"/> </Link> </div>

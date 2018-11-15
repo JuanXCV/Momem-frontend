@@ -40,12 +40,17 @@ class MomemCreate extends Component {
         });
         this.props.history.push('/momems');
       })
-      .catch( error => console.log(error) )
+      .catch(error => {
+        console.error(error)
+      })
   }
 
   handleChange = (event) => {  
     const {name, value} = event.target;
-    this.setState({[name]: value});
+    this.setState({
+      [name]: value,
+      errorMessage: null,
+    });
   }
 
   handleChangeTheme = (event) => {  
@@ -70,7 +75,7 @@ class MomemCreate extends Component {
 
     })
     .catch(error => {
-      console.log(error)
+      console.error(error)
     })    
 
   }
@@ -96,7 +101,7 @@ class MomemCreate extends Component {
         themes,
         theme: "",
         themesFiltered: null,
-        errorMessage: 'Theme already added'
+        errorMessage: 'Categorie already added'
       })
     }
 
@@ -109,7 +114,7 @@ class MomemCreate extends Component {
 
     })
     .catch(error => {
-      console.log(error)
+      console.error(error)
     })
   }
 
@@ -142,18 +147,12 @@ class MomemCreate extends Component {
         <div className="field">
           <label className="label">Content</label>
           <div className="control">
-            <input className="input" type="text" placeholder="Escriba un articulo" name="content" value={content} onChange={this.handleChange}/>
+            <textarea className="input content" type="text" placeholder="Escriba un articulo" name="content" value={content} onChange={this.handleChange}/>
           </div>
         </div>
 
-        <div className="field">
-          <label className="label">Image</label>
-          <div className="control">
-            <input className="input" type="text" placeholder="Ponga un enlace a una imagen" name="image" value={image} onChange={this.handleChange}/>
-          </div>
-        </div>
         <div className='field'>
-          <label className="label">Themes:</label>
+          <label className="label">Categories</label>
           <div className='field is-grouped wrap'>
           {themes.length>0 ? (
             themes.map((item, idx) => {
@@ -183,6 +182,14 @@ class MomemCreate extends Component {
             ""
           )}
         </div>
+
+        <div className="field">
+          <label className="label">Image</label>
+          <div className="control">
+            <input className="input" type="text" placeholder="Ponga un enlace a una imagen" name="image" value={image} onChange={this.handleChange}/>
+          </div>
+        </div>
+
         <div className='field' >
           <div className='control' >
             <input className='button is-momem title' type="submit" value="MO!" />

@@ -12,7 +12,7 @@ class Navbar extends Component {
           <div className="navbar-brand">
             <div className='navbar-item' > <Link to='/momems' > <img src="/images/home.png" alt="home"/> </Link> </div>
             <div className='navbar-item' > <Link to='/search' > <img src="/images/search.png" alt="search"/> </Link> </div>
-            <div className='navbar-item' > <Link to='/momem' > <img src="/images/notifications.png" alt="notifications"/> </Link> </div>
+            <div className='navbar-item' > <Link to='/notifications' > <img src="/images/notifications.png" alt="notifications"/> </Link> </div>
             <div className='navbar-item' > <Link to='/filters' > <img src="/images/filters.png" alt="filters"/> </Link> </div>
           </div>
         </nav>

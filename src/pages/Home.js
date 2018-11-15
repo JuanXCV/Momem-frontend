@@ -49,7 +49,7 @@ class Home extends Component {
       this.state.callback();
     })
     .catch(error => {
-      console.log(error)
+      console.error(error)
     })
   }
 

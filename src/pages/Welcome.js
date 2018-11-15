@@ -7,12 +7,12 @@ export default class Welcome extends Component {
       <div className='section welcome'>
         <img src="/images/momem.jpg" alt=""/>
         <p className='title white' >INFORMATION <br/> IS  POWER</p>
-        <div class="is-grouped center">
-          <div class="control">
-            <Link to='/login' class="button subtitle black">Accede</Link>
+        <div className="is-grouped center">
+          <div className="control">
+            <Link to='/login' className="button subtitle black">Accede</Link>
           </div>
-          <div class="control">
-            <Link to='signup' class="button subtitle black">Registrate</Link>
+          <div className="control">
+            <Link to='signup' className="button subtitle black">Registrate</Link>
           </div>
         </div>
       </div>

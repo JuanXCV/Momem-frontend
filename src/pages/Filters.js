@@ -67,7 +67,7 @@ class Filters extends Component {
       this.props.setUser(user)
     })
     .catch(error => {
-      console.log(error)
+      console.error(error)
     })
   }
 
