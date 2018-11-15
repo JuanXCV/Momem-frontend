@@ -47,8 +47,6 @@ class MomemDetail extends Component {
 
             <div className="content">
               {currentMomem.content}
-              <br/>
-              <time dateTime="2016-1-1">{currentMomem.timestamps}</time>
             </div>
           </div>
         </div>

@@ -210,3 +210,7 @@
  .notifications {
    padding-top: 150px; 
  }
+
+ .content {
+  height: auto;
+ }
