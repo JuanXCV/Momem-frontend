@@ -119,12 +119,12 @@ class ThemeCard extends Component {
       <div>
         <div className="card theme-card" >
           <div className="card-content">
-            <p className="subtitle" onClick={this.handleClick}>
+            <p className="subtitle" onTouchStart={this.handleClick} onclick = "void(0)">
               {theme.name}
             </p>
           </div>
           <div className='card-content'>
-            <p  onClick={() => {this.props.onDelete(theme._id)}} className='subtitle button is-danger ' >-</p>
+            <p  onTouchStart={() => {this.props.onDelete(theme._id)}} onclick = "void(0)" className='subtitle button is-danger ' >-</p>
           </div>
         </div>
         {isVisible ? (
@@ -144,12 +144,12 @@ class ThemeCard extends Component {
                 <input value={inputFont} type="text" className='input input-search' placeholder='Add a source' onChange={this.handleChange}/>
               </div>
               <div className='control'>
-                <button onClick={this.fontSubmit}  className='button is-momem'> + </button>
+                <button onTouchStart={this.fontSubmit} onclick = "void(0)"  className='button is-momem'> + </button>
               </div>
             </div>
               {errorMessage ? <p>{errorMessage}</p> : "" }
               {fontsFiltered.map(item => {
-                return <button  onClick={(e)=>{ e.preventDefault(); this.handleAddFont(item)}} className='button is-small' key={item._id} >{item.font.username}</button>
+                return <button  onTouchStart={(e)=>{ e.preventDefault(); this.handleAddFont(item)}} onclick = "void(0)" className='button is-small' key={item._id} >{item.font.username}</button>
               })}
           </div>
           

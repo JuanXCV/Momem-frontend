@@ -156,7 +156,7 @@ class MomemCreate extends Component {
           <div className='field is-grouped wrap'>
           {themes.length>0 ? (
             themes.map((item, idx) => {
-              return <div className='control' key={idx} > <p  onClick={(e)=> {e.preventDefault(); this.handleDelete(item)}}  className='button is-link is-small padding'>{item.name}</p> </div>
+              return <div className='control' key={idx} > <p  onTouchStart={(e)=> {e.preventDefault(); this.handleDelete(item)}} onclick = "void(0)"  className='button is-link is-small padding'>{item.name}</p> </div>
             })
           ) : (
             ""
@@ -167,14 +167,14 @@ class MomemCreate extends Component {
               <input className="input" type="text" placeholder="Elija un tema" name="theme" value={theme} onChange={this.handleChangeTheme}/>
             </div>
             <div className='control'>
-              <button onClick={(e) => {e.preventDefault(); this.themeSubmit(theme)}}  className='button is-momem title'> + </button>
+              <button onTouchStart={(e) => {e.preventDefault(); this.themeSubmit(theme)}} onclick = "void(0)"  className='button is-momem title'> + </button>
             </div>
           </div>
           {errorMessage ? <p>{errorMessage}</p> : "" }
           { themesFiltered ? (
             
             themesFiltered.map(item => {
-              return <button  onClick={(e)=>{ e.preventDefault(); this.themeSubmit(item.name)}} className='button is-small' key={item._id} >{item.name}</button>
+              return <button  onTouchStart={(e)=>{ e.preventDefault(); this.themeSubmit(item.name)}} onclick = "void(0)" className='button is-small' key={item._id} >{item.name}</button>
             })
             
           ) : (

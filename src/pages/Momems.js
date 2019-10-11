@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import momem from '../lib/momem-service';
 import MomemCard from '../components/MomemCard'
+import Loading from '../components/Loading'
+import { LOADIPHLPAPI } from 'dns';
 
 class Momems extends Component {
 
@@ -15,7 +17,7 @@ class Momems extends Component {
 
     const {isLoading, momems, errorMessage, isUpdated} = this.state;
     if(isLoading || isUpdated) {
-      return <h1>is loading...</h1>
+      return <Loading/>
     }
     return (
       

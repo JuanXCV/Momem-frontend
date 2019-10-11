@@ -17,6 +17,7 @@ import AuthContext from './lib/authContext';
 import Welcome from './pages/Welcome'
 import AnonRoute from './components/AnonRoute'
 import Notifications from './pages/Notifications'
+import Loading from './components/Loading';
 
 class App extends Component {
   render() {

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import momem from '../lib/momem-service';
 import { withAuth } from '../lib/authContext';
+import Loading from '../components/Loading'
 
 class MomemDetail extends Component {
 
@@ -15,7 +16,7 @@ class MomemDetail extends Component {
     const {isLoading, currentMomem} = this.state;
     const {user} = this.props
     if(isLoading) {
-      return <h1>is loading...</h1>
+      return <Loading/>
     }
 
     return (
@@ -51,7 +52,7 @@ class MomemDetail extends Component {
           </div>
         </div>
         <div className='section delete-button'> 
-          {user._id === currentMomem.owner._id ?  <button onClick={this.handleClick} className='button is-danger padding'>DELETE MOMEM</button>: ""}
+          {user._id === currentMomem.owner._id ?  <button onTouchStart={this.handleClick} onclick = "void(0)" className='button is-danger padding'>DELETE MOMEM</button>: ""}
         </div>
       </div>
     )

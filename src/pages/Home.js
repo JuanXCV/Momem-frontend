@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withAuth } from '../lib/authContext';
 import Momems from './Momems';
 import Promise from 'bluebird'
+import Loading from '../components/Loading'
 
 class Home extends Component {
 
@@ -65,7 +66,7 @@ class Home extends Component {
   render() {
     const {filters, currentFilter, isLoading, errorMessage} = this.state;
     if(isLoading){
-      return <h1>is loading...</h1>
+      return <Loading/>
     }
     return (
       <div className='home'>
@@ -74,7 +75,7 @@ class Home extends Component {
         <div>
           <div className='filters-bar' >
             {filters.map((item) => {
-              return <p onClick={() => {this.handleFilter(item)}} key={item._id} className='button is-momem padding title' >{item.theme.name}</p>
+              return <p onTouchStart={() => {this.handleFilter(item)}} onclick = "void(0)" key={item._id} className='button is-momem padding title' >{item.theme.name}</p>
             })}
           </div>
           <Momems filter={currentFilter} onCallback={this.handleCallback} />

@@ -30,11 +30,11 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 70px;
+  height: 100px;
 }
 
 .momem-create {
-  padding-top: 80px;
+  padding-top: 110px;
   padding-bottom: 100px; 
 }
 
@@ -103,7 +103,7 @@
  }
 
  .filters {
-   padding-top: 90px;
+   padding-top: 110px;
    height: 100%;
    margin-bottom: 50px;
  }
@@ -120,7 +120,7 @@
  }
 
  .is-momem {
-  background-color: #F6C632;
+  background-color: #F6C605;
   color: white;
   font-size: 1em;
  }
@@ -134,7 +134,7 @@
  }
 
  .home {
-   padding-top: 80px;
+   padding-top: 110px;
    margin-bottom: 80px;
  }
 
@@ -146,17 +146,17 @@
  }
 
  .momem-detail {
-   padding-top: 70px;
+   padding-top: 110px;
    margin-bottom: 100px;
  }
 
  .search-momems {
-   padding-top: 50px;
+   padding-top: 110px;
    margin-bottom: 80px;
  }
 
  .welcome {
-   background-color: #F6C632;
+   background-color: #F6C605;
    height: 100vh;
    text-align: center;
  }
@@ -188,9 +188,8 @@
  }
 
  .momem-search {
-   border-color: #F6C632;
+   border-color: #F6C605
  }
-
  .themes {
    padding: 5px;
    border-radius: 5px;
@@ -213,4 +212,16 @@
 
  .content {
   height: auto;
+ }
+
+ .loading {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #F6C605;
+   height: 100vh;
+ }
+
+ .loading img {
+   width: 100%;
  }

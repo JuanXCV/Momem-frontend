@@ -3,6 +3,7 @@ import { withAuth } from '../lib/authContext';
 import { Link } from 'react-router-dom';
 import userService from '../lib/user-service'
 import MomemCard from '../components/MomemCard'
+import Loading from '../components/Loading'
 
 class Private extends Component {
 
@@ -17,7 +18,7 @@ class Private extends Component {
     const {momems, isLoading} = this.state;
     
     if(isLoading){
-      return <h1>is loading...</h1>
+      return <Loading/>
     }
     const {username, name, description, image, backgroundImage} = this.state.user
 

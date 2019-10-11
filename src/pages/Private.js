@@ -22,7 +22,7 @@ class Private extends Component {
           <div className= 'profile'>
             <img src={image} alt="profile" className='profile-img'/>
             <div className='logout' >
-              <div onClick={this.handleLogOut} className='logout-button' > <img src="/images/logout.png" alt=""/> </div>
+              <div onTouchStart={this.handleLogOut} onclick = "void(0)" className='logout-button' > <img src="/images/logout.png" alt=""/> </div>
             </div>
             <h1 className='title' >{name}</h1>
             <h2 className='subtitle' >@{username} </h2>

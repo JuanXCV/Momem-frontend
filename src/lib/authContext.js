@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import authService from './auth-service';
+import Loading from '../components/Loading'
 
 const { Provider, Consumer } = React.createContext();
 
@@ -62,7 +63,7 @@ export default class AuthContext extends Component {
 
   render() {
     const { isLoading } = this.state;
-    return isLoading ? <h1>Loading...</h1> : <Provider value={{
+    return isLoading ? <Loading/> : <Provider value={{
       isLogged: this.state.isLogged,
       user: this.state.user,
       logout: this.handleLogOut,

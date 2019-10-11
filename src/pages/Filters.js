@@ -82,7 +82,7 @@ class Filters extends Component {
           </div>
           {errorMessage ? <p>{errorMessage}</p> : "" }
           {themesFiltered.map(item => {
-            return <button  onClick={(e)=>{ e.preventDefault(); this.handleAddTheme(item)}} className='button is-small' key={item._id} >{item.name}</button>
+            return <button  onTouchStart={(e)=>{ e.preventDefault(); this.handleAddTheme(item)}} onclick = "void(0)" className='button is-small' key={item._id} >{item.name}</button>
           })}
         </div>
         {filters.map((item, idx) => {
